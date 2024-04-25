@@ -11,17 +11,17 @@ html(lang="en")
             h1 MyZoom
         main
             h2 Welcome to MyZoom
-            h3 MyZoom is a realtime webcam chatting application made with WebRTC, WebSocket, NodeJs, Pug, Javascript, etc.
+            h3 MyZoom is a realtime webcam chatting application made with WebRTC, Socket.io, NodeJs, Pug, Javascript, etc.
             hr
             div#welcome
                 form
-                    input(placeholder="Room name", required, type="text")
-                    button Enter Room
+                    input(placeholder="Type your room name.", required, type="text")
+                    button Join Room.
             div#room
                 h3
                 ul
                 form
-                    input(placeholder="message", required, type="text")
+                    input(placeholder="Message.", required, type="text")
                     button Send
         script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js") 
