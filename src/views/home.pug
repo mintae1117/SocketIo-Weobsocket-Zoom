@@ -13,13 +13,6 @@ html(lang="en")
             h2 Welcome to MyZoom
             h3 MyZoom is a realtime webcam chatting application made with WebRTC, WebSocket, NodeJs, Pug, Javascript, etc.
             hr
-            form#nick
-                input(type="text", placeholder="Choose a nickname", required)
-                button Save
-            br
-            form#message
-                input(type="text", placeholder="Write a message.", required)
-                button Send
-            p Realtime messages.
-            ul 
+            
         script(src="/public/js/app.js") 
+        script(src="/socket.io/socket.io.js") 
