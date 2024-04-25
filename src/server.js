@@ -18,6 +18,15 @@ app.get("/*", (_, res) => res.redirect("/"));
 const httpServer = http.createServer(app);
 const socketIOServer = new Server(httpServer);
 
+socketIOServer.on("connection", (socket) => {
+    socket.on("enter_room", (msg, done) => {
+      console.log(msg);
+      setTimeout(() => {
+        done();
+      }, 10000);
+    });
+});
+
 
 const handleListen = () => console.log(`Listening on http://localhost:3000`);
 httpServer.listen(3000, handleListen);
