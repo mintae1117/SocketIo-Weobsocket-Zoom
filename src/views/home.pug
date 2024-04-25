@@ -15,12 +15,16 @@ html(lang="en")
             hr
             div#welcome
                 form
-                    input(placeholder="Type your room name.", required, type="text")
+                    p Nickname.
+                    input#nickname(placeholder="Type your nickname.", required, type="text") 
+                    p Room name.
+                    input#roomname(placeholder="Type your room name.", required, type="text") 
                     button Join Room.
             div#room
                 h3
+                span
                 ul
-                form
+                form#msg
                     input(placeholder="Message.", required, type="text")
                     button Send
         script(src="/socket.io/socket.io.js") 
