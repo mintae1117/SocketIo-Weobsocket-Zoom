@@ -1,7 +1,7 @@
 import express from "express";
 import path from 'path';
 import http from "http";
-import {Server} from "socket.io";
+import { Server } from "socket.io";
 
 
 const __dirname = path.resolve();
@@ -16,17 +16,16 @@ app.get("/*", (_, res) => res.redirect("/"));
 
 
 const httpServer = http.createServer(app);
-const socketIOServer = new Server(httpServer);
+const wsServer = new Server(httpServer);
 
-socketIOServer.on("connection", (socket) => {
-    socket.on("enter_room", (msg, done) => {
-      console.log(msg);
+wsServer.on("connection", (socket) => {
+    socket.on("enter_room", (roomName, done) => {
+      console.log(roomName);
       setTimeout(() => {
-        done();
-      }, 10000);
+        done("hello from the backend");
+      }, 3000);
     });
 });
-
 
 const handleListen = () => console.log(`Listening on http://localhost:3000`);
 httpServer.listen(3000, handleListen);
