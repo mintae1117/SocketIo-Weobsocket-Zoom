@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Zoom-Clone
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+    body
+        header
+            h1 MyZoom
+        main
+            h2 Welcome to MyZoom
+            h3 MyZoom is a realtime webcam chatting application made with WebRTC, WebSocket, NodeJs, Pug, Javascript, etc.
+            hr
+            form#nick
+                input(type="text", placeholder="Choose a nickname", required)
+                button Save
+            br
+            form#message
+                input(type="text", placeholder="Write a message.", required)
+                button Send
+            p Realtime messages.
+            ul 
+        script(src="/public/js/app.js") 
